@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "RTC.h"
+#include "rtc.h"
 #include "config.h"
 
 void setup ()

@@ -45,6 +45,7 @@ void timeToText(const RtcDateTime& dt){
 //int hours = dt.Hour().toInt();
 //unsigned int hours = atoi (dt.Hour());
 
+//TODO: Fix time offsets for "25 minutes TO three... etc"
 switch (hours) {
   case 12:
   case 0:

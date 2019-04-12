@@ -3,12 +3,6 @@
 #include <RtcDS1307.h>
 
 #include "config.h"
-// CONNECTIONS:
-// DS1307 SDA --> SDA
-// DS1307 SCL --> SCL
-// DS1307 VCC --> 5v
-// DS1307 GND --> GND
-
 
 RtcDS1307<TwoWire> Rtc(Wire);
 

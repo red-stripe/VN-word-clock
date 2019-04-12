@@ -1,4 +1,20 @@
 
+// CONNECTIONS:
+// DS1307 SDA --> SDA
+// DS1307 SCL --> SCL
+// DS1307 VCC --> 5v
+// DS1307 GND --> GND
+
+// WS2812 +5 --> External 5v
+// WS2812 GND --> External GND --> GND
+// WS2812 Din --> LED_PIN
+
 // config
 
 #define DS1307_I2C_ADDRESS 0x68
+
+#define LED_PIN     5
+#define NUM_LEDS    60
+#define BRIGHTNESS  64
+#define LED_TYPE    WS2812
+#define COLOR_ORDER GRB

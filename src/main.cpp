@@ -33,6 +33,8 @@ void timeToText(const RtcDateTime& dt){
   Serial.println(dt.Minute());
   unsigned char hoursNow = dt.Hour();
   int hours = hoursNow;
+  unsigned char minutesNow = dt.Minute();
+  int minutes = minutesNow;
 //int hours = 1;
   //dt.Second())
 //int hours = dt.Hour().toInt();
@@ -40,47 +42,135 @@ void timeToText(const RtcDateTime& dt){
 
 switch (hours) {
   case 12:
-    Serial.println("Muoi Hai");
+  case 0:
+    Serial.print("Muoi Hai");
     break;
   case 11:
-    Serial.println("Muoi Mot");
+  case 23:
+    Serial.print("Muoi Mot");
     break;
   case 10:
-    Serial.println("Muoi");
+  case 22:
+    Serial.print("Muoi");
     break;
   case 9:
-    Serial.println("Chin");
+  case 21:
+    Serial.print("Chin");
     break;
   case 8:
-    Serial.println("Tam");
+  case 20:
+    Serial.print("Tam");
     break;
   case 7:
-    Serial.println("Bay");
+  case 19:
+  Serial.print("Bay");
     break;
   case 6:
-    Serial.println("Sau");
+  case 18:
+    Serial.print("Sau");
     break;
   case 5:
-    Serial.println("Nam");
+  case 17:
+    Serial.print("Nam");
     break;
   case 4:
-    Serial.println("Bon");
+  case 16:
+    Serial.print("Bon");
     break;
   case 3:
-    Serial.println("Ba");
+  case 15:
+    Serial.print("Ba");
     break;
   case 2:
-    Serial.println("Hai");
+  case 14:
+    Serial.print("Hai");
     break;
   case 1:
-    Serial.println("Mot");
+  case 13:
+    Serial.print("Mot");
     break;
     default:
       Serial.println("woops");
 
 }
 
+if( minutes < 5){
+  Serial.print("giờ");
+}
+else if( minutes >= 5 && minutes < 10){
+  Serial.print("năm");
+}
+else if( minutes >= 10 && minutes < 15){
+  Serial.print("muoi");
+}
+else if( minutes >= 15 && minutes < 20){
+  Serial.print("muoi");
+  Serial.print("lam");
+}
+else if( minutes >= 20 && minutes < 25){
+  Serial.print("giờ");
+  Serial.print("hai");
+  Serial.print("muoi");
+}
+else if( minutes >= 25 && minutes < 30){
+  Serial.print("giờ");
+  Serial.print("hai");
+  Serial.print("muoi");
+  Serial.print("lam");
+}
+else if( minutes >= 30 && minutes < 35){
+  Serial.print("ruoi");
+}
+else if( minutes >= 35 && minutes < 40){
+  Serial.print("giờ");
+  Serial.print("kem");
+  Serial.print("hai");
+  Serial.print("lam");
+  Serial.print("phut");
+}
+else if( minutes >= 40 && minutes < 45){
+  Serial.print("giờ");
+  Serial.print("kem");
+  Serial.print("hai");
+  Serial.print("muoi");
+  Serial.print("phut");
+}
+else if( minutes >= 45 && minutes < 50){
+  Serial.print("giờ");
+  Serial.print("kem");
+  Serial.print("muoi");
+  Serial.print("lam");
+}
+else if( minutes >= 50 && minutes < 55){
+  Serial.print("giờ");
+  Serial.print("kem");
+  Serial.print("muoi");
+  Serial.print("phut");
+}
+else if( minutes >= 55){
+  Serial.print("giờ");
+  Serial.print("kem");
+  Serial.print("nam");
+  Serial.print("phut");
+}
 
+Serial.println();
+/*
+Minutes
+00  gio
+05  Nam
+10  muoi
+15  muoi lam
+20  gio hai muoi
+25  gio hai muoi lam
+30  ruoi
+35  gio kem hai lam
+40 gio kem hai muoi
+45 gio kem muoi lam
+50 gio kem Muoi
+55  gio kem nam
+
+*/
 
   /*
     The time is = bay gio la

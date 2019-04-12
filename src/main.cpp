@@ -28,20 +28,91 @@ void printDateTime(const RtcDateTime& dt)
     Serial.print(datestring);
 }
 
+void timeToText(const RtcDateTime& dt){
+  Serial.print(dt.Hour());
+  Serial.println(dt.Minute());
+  unsigned char hoursNow = dt.Hour();
+  int hours = hoursNow;
+//int hours = 1;
+  //dt.Second())
+//int hours = dt.Hour().toInt();
+//unsigned int hours = atoi (dt.Hour());
+
+switch (hours) {
+  case 12:
+    Serial.println("Muoi Hai");
+    break;
+  case 11:
+    Serial.println("Muoi Mot");
+    break;
+  case 10:
+    Serial.println("Muoi");
+    break;
+  case 9:
+    Serial.println("Chin");
+    break;
+  case 8:
+    Serial.println("Tam");
+    break;
+  case 7:
+    Serial.println("Bay");
+    break;
+  case 6:
+    Serial.println("Sau");
+    break;
+  case 5:
+    Serial.println("Nam");
+    break;
+  case 4:
+    Serial.println("Bon");
+    break;
+  case 3:
+    Serial.println("Ba");
+    break;
+  case 2:
+    Serial.println("Hai");
+    break;
+  case 1:
+    Serial.println("Mot");
+    break;
+    default:
+      Serial.println("woops");
+
+}
+
+
+
+  /*
+    The time is = bay gio la
+    ten         = Muoi
+    eleven      = Muoi Mot
+    twelve      = Muoi Hai
+    one         = Mot
+    two         = Hai
+    three       = Ba
+    four        = Bon
+    five        = Nam
+    six         = Sau
+    seven       = Bay
+    eight       = Tam
+    nine        = Chin
+
+
+  */
+
+}
+
 
 void setup ()
 {
     Serial.begin(57600);
     delay(3000);
 
-    //Print time code was compiled
-    Serial.print("compiled: ");
-    Serial.print(__DATE__);
-    Serial.println(__TIME__);
-
     Wire.begin();
     Rtc.Begin();
 
+    //Print time code was compiled
+    Serial.print("compiled: ");
     RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
     printDateTime(compiled);
     Serial.println();
@@ -121,6 +192,8 @@ void loop ()
     RtcDateTime now = Rtc.GetDateTime();
 
     printDateTime(now);
+    Serial.println();
+    timeToText(now);
     Serial.println();
 
     delay(10000); // ten seconds

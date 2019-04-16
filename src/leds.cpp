@@ -20,3 +20,16 @@ void led_task()
     delay(100);
   }
 }
+
+void led_update(int words[NUM_LEDS])
+{
+  for(int i = 0; i < NUM_LEDS; i++) {
+    if(words[i] == 1){
+      leds[i] = CRGB::White;
+    } else {
+      leds[i] = CRGB::Black;
+    }
+    FastLED.show();
+  }
+
+}

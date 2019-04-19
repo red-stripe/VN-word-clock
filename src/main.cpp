@@ -84,16 +84,35 @@ const int minuteResolution = sizeof(minuteWord) / sizeof(minuteWord[0]);
     eight       = Tam
     nine        = Chin
   */
-/*
-const int t_itis[8] =       { 0,  1,  2, 3, 4, 5, 6, 7 };
-const int t_ten[4] =        { 8, 9, 10, 11};
-const int t_eleven =        { 8, 9, 10, 11, 12, 13, 14};
-const int t_twelve =        { 8, 9, 10, 11, 15, 16, 17};
-const int t_one =           { 12, 13, 14 };
-const int t_two =           { 15, 16, 17 };
-const int t_three =         { 18, };
-*/
+const int h_itis[]  = { 0,  1,  2, 3, 4, 5, 6, 7 };
+const int h_01[]    = { 12, 13, 14 };
+const int h_02[]    = { 15, 16, 17 };
+const int h_03[]    = { 18, 19 };
+const int h_04[]    = { 20, 21, 22 };
+const int h_05[]    = { 23, 24, 25 };
+const int h_06[]    = { 26, 27, 28 };
+const int h_07[]    = { 29, 30, 31 };
+const int h_08[]    = { 32, 33, 34 };
+const int h_09[]    = { 35, 36, 37, 38 };
+const int h_10[]    = { 8, 9, 10, 11 };
+const int h_11[]    = { 8, 9, 10, 11, 12, 13, 14 };
+const int h_12[]    = { 8, 9, 10, 11, 15, 16, 17 };
 
+letters hourWord[] = {
+  {sizeof(h_itis) / sizeof(h_itis[0]), h_itis},
+  {sizeof(h_01) / sizeof(h_01[0]), h_01},
+  {sizeof(h_02) / sizeof(h_02[0]), h_02},
+  {sizeof(h_03) / sizeof(h_03[0]), h_03},
+  {sizeof(h_04) / sizeof(h_04[0]), h_04},
+  {sizeof(h_05) / sizeof(h_05[0]), h_05},
+  {sizeof(h_06) / sizeof(h_06[0]), h_06},
+  {sizeof(h_07) / sizeof(h_07[0]), h_07},
+  {sizeof(h_08) / sizeof(h_08[0]), h_08},
+  {sizeof(h_09) / sizeof(h_09[0]), h_09},
+  {sizeof(h_10) / sizeof(h_10[0]), h_10},
+  {sizeof(h_11) / sizeof(h_11[0]), h_11},
+  {sizeof(h_12) / sizeof(h_12[0]), h_12},
+};
 
 void resetLed()
 {
@@ -116,11 +135,19 @@ void loop ()
   rtc_task();
   resetLed();
 //led_task();
-  for(int x = 0; x < 12; x++)
+
+  for(int i = 1; i < 13; i++)
   {
-    textToWords(minuteWord[x]);
-    led_update(activeLed);
-    delay(1000);
+    for(int x = 0; x < 12; x++)
+    {
+      textToWords(hourWord[0]);
+      textToWords(hourWord[i]);
+      textToWords(minuteWord[x]);
+      led_update(activeLed);
+      delay(250);
+      resetLed();
+    }
+
   }
 
 

@@ -92,104 +92,69 @@ switch (hours) {
     default:
       Serial.println("woops");
 
-}
+  }
 
-if( minutes < 5){
-  Serial.print("giờ");
-}
-else if( minutes >= 5 && minutes < 10){
-  Serial.print("năm");
-}
-else if( minutes >= 10 && minutes < 15){
-  Serial.print("muoi");
-}
-else if( minutes >= 15 && minutes < 20){
-  Serial.print("muoi");
-  Serial.print("lam");
-}
-else if( minutes >= 20 && minutes < 25){
-  Serial.print("giờ");
-  Serial.print("hai");
-  Serial.print("muoi");
-}
-else if( minutes >= 25 && minutes < 30){
-  Serial.print("giờ");
-  Serial.print("hai");
-  Serial.print("muoi");
-  Serial.print("lam");
-}
-else if( minutes >= 30 && minutes < 35){
-  Serial.print("ruoi");
-}
-else if( minutes >= 35 && minutes < 40){
-  Serial.print("giờ");
-  Serial.print("kem");
-  Serial.print("hai");
-  Serial.print("lam");
-  Serial.print("phut");
-}
-else if( minutes >= 40 && minutes < 45){
-  Serial.print("giờ");
-  Serial.print("kem");
-  Serial.print("hai");
-  Serial.print("muoi");
-  Serial.print("phut");
-}
-else if( minutes >= 45 && minutes < 50){
-  Serial.print("giờ");
-  Serial.print("kem");
-  Serial.print("muoi");
-  Serial.print("lam");
-}
-else if( minutes >= 50 && minutes < 55){
-  Serial.print("giờ");
-  Serial.print("kem");
-  Serial.print("muoi");
-  Serial.print("phut");
-}
-else if( minutes >= 55){
-  Serial.print("giờ");
-  Serial.print("kem");
-  Serial.print("nam");
-  Serial.print("phut");
-}
+  if( minutes < 5){
+    Serial.print("giờ");
+  }
+  else if( minutes >= 5 && minutes < 10){
+    Serial.print("năm");
+  }
+  else if( minutes >= 10 && minutes < 15){
+    Serial.print("muoi");
+  }
+  else if( minutes >= 15 && minutes < 20){
+    Serial.print("muoi");
+    Serial.print("lam");
+  }
+  else if( minutes >= 20 && minutes < 25){
+    Serial.print("giờ");
+    Serial.print("hai");
+    Serial.print("muoi");
+  }
+  else if( minutes >= 25 && minutes < 30){
+    Serial.print("giờ");
+    Serial.print("hai");
+    Serial.print("muoi");
+    Serial.print("lam");
+  }
+  else if( minutes >= 30 && minutes < 35){
+    Serial.print("ruoi");
+  }
+  else if( minutes >= 35 && minutes < 40){
+    Serial.print("giờ");
+    Serial.print("kem");
+    Serial.print("hai");
+    Serial.print("lam");
+    Serial.print("phut");
+  }
+  else if( minutes >= 40 && minutes < 45){
+    Serial.print("giờ");
+    Serial.print("kem");
+    Serial.print("hai");
+    Serial.print("muoi");
+    Serial.print("phut");
+  }
+  else if( minutes >= 45 && minutes < 50){
+    Serial.print("giờ");
+    Serial.print("kem");
+    Serial.print("muoi");
+    Serial.print("lam");
+  }
+  else if( minutes >= 50 && minutes < 55){
+    Serial.print("giờ");
+    Serial.print("kem");
+    Serial.print("muoi");
+    Serial.print("phut");
+  }
+  else if( minutes >= 55){
+    Serial.print("giờ");
+    Serial.print("kem");
+    Serial.print("nam");
+    Serial.print("phut");
+  }
 
 Serial.println();
-/*
-Minutes
-00  gio
-05  Nam
-10  muoi
-15  muoi lam
-20  gio hai muoi
-25  gio hai muoi lam
-30  ruoi
-35  gio kem hai lam
-40 gio kem hai muoi
-45 gio kem muoi lam
-50 gio kem Muoi
-55  gio kem nam
-
-*/
-
-  /*
-    The time is = bay gio la
-    ten         = Muoi
-    eleven      = Muoi Mot
-    twelve      = Muoi Hai
-    one         = Mot
-    two         = Hai
-    three       = Ba
-    four        = Bon
-    five        = Nam
-    six         = Sau
-    seven       = Bay
-    eight       = Tam
-    nine        = Chin
-
-
-  */
-
 }
 
 

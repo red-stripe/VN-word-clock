@@ -2,6 +2,7 @@
 #include <Wire.h> // must be included here so that Arduino library object file references work
 #include <RtcDS1307.h>
 
+#include "clock.h"
 #include "config.h"
 
 RtcDS1307<TwoWire> Rtc(Wire);
@@ -25,136 +26,19 @@ void printDateTime(const RtcDateTime& dt)
     Serial.print(datestring);
 }
 
+//int oldMinute = NULL;
 
-
-void timeToText(const RtcDateTime& dt){
-  Serial.print(dt.Hour());
-  Serial.println(dt.Minute());
+void updateTime(const RtcDateTime& dt){
   unsigned char hoursNow = dt.Hour();
   int hours = hoursNow;
   unsigned char minutesNow = dt.Minute();
   int minutes = minutesNow;
-//int hours = 1;
-  //dt.Second())
-//int hours = dt.Hour().toInt();
-//unsigned int hours = atoi (dt.Hour());
-
-//TODO: Fix time offsets for "25 minutes TO three... etc"
-switch (hours) {
-  case 12:
-  case 0:
-    Serial.print("Muoi Hai");
-    break;
-  case 11:
-  case 23:
-    Serial.print("Muoi Mot");
-    break;
-  case 10:
-  case 22:
-    Serial.print("Muoi");
-    break;
-  case 9:
-  case 21:
-    Serial.print("Chin");
-    break;
-  case 8:
-  case 20:
-    Serial.print("Tam");
-    break;
-  case 7:
-  case 19:
-  Serial.print("Bay");
-    break;
-  case 6:
-  case 18:
-    Serial.print("Sau");
-    break;
-  case 5:
-  case 17:
-    Serial.print("Nam");
-    break;
-  case 4:
-  case 16:
-    Serial.print("Bon");
-    break;
-  case 3:
-  case 15:
-    Serial.print("Ba");
-    break;
-  case 2:
-  case 14:
-    Serial.print("Hai");
-    break;
-  case 1:
-  case 13:
-    Serial.print("Mot");
-    break;
-    default:
-      Serial.println("woops");
-
-  }
-
-  if( minutes < 5){
-    Serial.print("giờ");
-  }
-  else if( minutes >= 5 && minutes < 10){
-    Serial.print("năm");
-  }
-  else if( minutes >= 10 && minutes < 15){
-    Serial.print("muoi");
-  }
-  else if( minutes >= 15 && minutes < 20){
-    Serial.print("muoi");
-    Serial.print("lam");
-  }
-  else if( minutes >= 20 && minutes < 25){
-    Serial.print("giờ");
-    Serial.print("hai");
-    Serial.print("muoi");
-  }
-  else if( minutes >= 25 && minutes < 30){
-    Serial.print("giờ");
-    Serial.print("hai");
-    Serial.print("muoi");
-    Serial.print("lam");
-  }
-  else if( minutes >= 30 && minutes < 35){
-    Serial.print("ruoi");
-  }
-  else if( minutes >= 35 && minutes < 40){
-    Serial.print("giờ");
-    Serial.print("kem");
-    Serial.print("hai");
-    Serial.print("lam");
-    Serial.print("phut");
-  }
-  else if( minutes >= 40 && minutes < 45){
-    Serial.print("giờ");
-    Serial.print("kem");
-    Serial.print("hai");
-    Serial.print("muoi");
-    Serial.print("phut");
-  }
-  else if( minutes >= 45 && minutes < 50){
-    Serial.print("giờ");
-    Serial.print("kem");
-    Serial.print("muoi");
-    Serial.print("lam");
-  }
-  else if( minutes >= 50 && minutes < 55){
-    Serial.print("giờ");
-    Serial.print("kem");
-    Serial.print("muoi");
-    Serial.print("phut");
-  }
-  else if( minutes >= 55){
-    Serial.print("giờ");
-    Serial.print("kem");
-    Serial.print("nam");
-    Serial.print("phut");
-  }
-
-Serial.println();
+  //int diff = abs(oldMinute-minutes);
+  //if(diff > 1)
+  //{
+      timeToText(hours, minutes);
+  //    minutes = oldMinute;
+  //}
 }
 
 
@@ -246,9 +130,7 @@ void rtc_task()
 
   RtcDateTime now = Rtc.GetDateTime();
 
-  printDateTime(now);
-  Serial.println();
-  timeToText(now);
-  Serial.println();
-
+//  printDateTime(now);
+//  Serial.println();
+  updateTime(now);
 }

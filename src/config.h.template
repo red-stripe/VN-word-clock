@@ -13,8 +13,10 @@
 
 #define DS1307_I2C_ADDRESS 0x68
 
-#define LED_PIN     5
-#define NUM_LEDS    90
-#define BRIGHTNESS  64
+#define LED_PIN     9
+#define NUM_LEDS    97
+#define BRIGHTNESS  255
 #define LED_TYPE    WS2812
 #define COLOR_ORDER GRB
+
+#define DEBUG false

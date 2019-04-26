@@ -15,22 +15,22 @@ void setup ()
 
 void loop ()
 {
+
   rtc_task();
   led_update();
   delay(10000);
   led_reset();
-//led_task();
+
 /*
-  for(int i = 1; i < 13; i++)
+  for(int i = 0; i < 24; i++)
   {
-    for(int x = 0; x < 12; x++)
+    for(int x = 0; x < 60; x += 5)
     {
-      textToWords(hourWord[0]);
-      textToWords(hourWord[i]);
-      textToWords(minuteWord[x]);
-      led_update(activeLed);
-      delay(500);
-      resetLed();
+      timeToText(i,x);
+      led_update();
+      delay(2000);
+      led_reset();
     }
-  }*/
+  }
+  */
 }

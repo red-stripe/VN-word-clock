@@ -25,18 +25,18 @@ Ba giờ kém nām phút        0255
 Ba giờ                     0300
 */
 
-const int t_00[]  = {46, 47, 48}; //c giờ
-const int t_05[]  = {46, 47, 48, 49, 50, 51, 59, 60, 61, 62}; //c giờ Năm phút
-const int t_10[]  = {46, 47, 48, 55, 56, 57, 58, 59, 60, 61, 62}; //c giờ mười phút
-const int t_15[]  = {46, 47, 48, 55, 56, 57, 58, 69, 70, 71, 59, 60, 61, 62}; //c giờ mười Lām phút
-const int t_20[]  = {46, 47, 48, 52, 53, 54, 63, 64, 65, 66, 59, 60, 61, 62}; //c giờ Hai mươi phút
-const int t_25[]  = {46, 47, 48, 52, 53, 54, 69, 70, 71, 59, 60, 61, 62}; //c giờ hai Lām phút
-const int t_30[]  = {39, 40, 41, 42}; //c rưỡi
-const int t_35[]  = {46, 47, 48, 43, 44, 45, 52, 53, 54, 69, 70, 71, 59, 60, 61, 62}; //c giờ kém hai Lām phút
-const int t_40[]  = {46, 47, 48, 43, 44, 45, 52, 53, 54, 63, 64, 65, 66, 59, 60, 61, 62}; //c giờ kém hai mươi phút
-const int t_45[]  = {46, 47, 48, 43, 44, 45, 55, 56, 57, 58, 69, 70, 71, 59, 60, 61, 62}; //c giờ kém mười Lām phút
-const int t_50[]  = {46, 47, 48, 43, 44, 45, 55, 56, 57, 58, 59, 60, 61, 62}; //c  giờ kém mười phút
-const int t_55[]  = {46, 47, 48, 43, 44, 45, 49, 50, 51, 59, 60, 61, 62}; //c giờ kém nām phút
+const int t_00[]  = {40, 39, 38}; //giờ
+const int t_05[]  = {40, 39, 38, 41, 42, 43, 54, 53, 52, 51}; //giờ Năm phút
+const int t_10[]  = {40, 39, 38, 47, 48, 49, 50, 54, 53, 52, 51}; //giờ mười phút
+const int t_15[]  = {40, 39, 38, 47, 48, 49, 50, 62, 61, 60, 54, 53, 52, 51}; //giờ mười Lām phút
+const int t_20[]  = {40, 39, 38, 44, 45, 46, 59, 58, 57, 56, 54, 53, 52, 51}; //giờ Hai mươi phút
+const int t_25[]  = {40, 39, 38, 44, 45, 46, 62, 61, 60, 54, 53, 52, 51}; //giờ hai Lām phút
+const int t_30[]  = {37, 36, 35, 34}; //rưỡi
+const int t_35[]  = {40, 39, 38, 33, 32, 31, 44, 45, 46, 62, 61, 60, 54, 53, 52, 51}; //giờ kém hai Lām phút
+const int t_40[]  = {40, 39, 38, 33, 32, 31, 44, 45, 46, 59, 58, 57, 56, 54, 53, 52, 51}; //giờ kém hai mươi phút
+const int t_45[]  = {40, 39, 38, 33, 32, 31, 47, 48, 49, 50, 62, 61, 60, 54, 53, 52, 51}; //giờ kém mười Lām phút
+const int t_50[]  = {40, 39, 38, 33, 32, 31, 47, 48, 49, 50, 54, 53, 52, 51}; //giờ kém mười phút
+const int t_55[]  = {40, 39, 38, 33, 32, 31, 41, 42, 43, 54, 53, 52, 51}; //giờ kém nām phút
 
 ledLetters minuteWord[] = {
   {sizeof(t_00) / sizeof(t_00[0]), t_00},
@@ -70,19 +70,19 @@ const int minuteResolution = sizeof(minuteWord) / sizeof(minuteWord[0]);
     eight       = Tam
     nine        = Chin
   */
-const int h_itis[]  = { 0,  1,  2, 3, 4, 5, 6, 7 }; //c
-const int h_01[]    = { 12, 13, 14 }; //c
-const int h_02[]    = { 15, 16, 17 }; //c
-const int h_03[]    = { 27, 28 }; //c
-const int h_04[]    = { 24, 25, 26 }; //c
-const int h_05[]    = { 21, 22, 23 }; //c
-const int h_06[]    = { 18, 19, 20 }; //c
-const int h_07[]    = { 29, 30, 31 }; //c
-const int h_08[]    = { 32, 33, 34 }; //c
-const int h_09[]    = { 35, 36, 37, 38 }; //c
-const int h_10[]    = { 8, 9, 10, 11 }; //c
-const int h_11[]    = { 8, 9, 10, 11, 12, 13, 14 }; //c
-const int h_12[]    = { 8, 9, 10, 11, 15, 16, 17 }; //c
+const int h_itis[]  = { 0 }; //c
+const int h_01[]    = { 7, 8, 9 }; //c
+const int h_02[]    = { 14, 13, 12 }; //c
+const int h_03[]    = { 10, 11 }; //c
+const int h_04[]    = { 28, 29, 30 }; //c
+const int h_05[]    = { 20, 19, 18 }; //c
+const int h_06[]    = { 17, 16, 15 }; //c
+const int h_07[]    = { 25, 26, 27 }; //c
+const int h_08[]    = { 4, 5, 6 }; //c
+const int h_09[]    = { 21, 22, 23, 24 }; //c
+const int h_10[]    = { 0, 1, 2, 3, 7, 8, 9 }; //c
+const int h_11[]    = { 0, 1, 2, 3, 7, 8, 9 }; //c
+const int h_12[]    = { 0, 1, 2, 3, 14, 13, 12 }; //c
 
 ledLetters hourWord[] = {
   {sizeof(h_itis) / sizeof(h_itis[0]), h_itis},
@@ -100,20 +100,6 @@ ledLetters hourWord[] = {
   {sizeof(h_12) / sizeof(h_12[0]), h_12},
 };
 
-const int t_morning[]   = {72, 73, 74, 75}; //04-10 sáng
-const int t_midday[]    = {77, 78, 79, 80}; //10-13 Trúa
-const int t_afternoon[] = {82, 83, 84, 85, 86}; //13-18 chiêu
-const int t_evening[]   = {94, 95, 96}; //18-22 tôi
-const int t_late[]      = {87, 88, 89}; //22-04 dem
-
-ledLetters timeOfDay[] = {
-  {sizeof(t_morning) / sizeof(t_morning[0]), t_morning},
-  {sizeof(t_midday) / sizeof(t_midday[0]), t_midday},
-  {sizeof(t_afternoon) / sizeof(t_afternoon[0]), t_afternoon},
-  {sizeof(t_evening) / sizeof(t_evening[0]), t_evening},
-  {sizeof(t_late) / sizeof(t_late[0]), t_late},
-};
-
 void textToWords(ledLetters words)
 {
   for(int x = 0; x < words.length; x++)
@@ -126,113 +112,39 @@ void minutesToWords(int minutes)
 {
   if( minutes < 5){
     textToWords(minuteWord[0]);
-//    Serial.print("giờ");
-//    Serial.print(" (oclock) ");
   }
   else if( minutes >= 5 && minutes < 10){
     textToWords(minuteWord[1]);
-//    Serial.print("năm");
-//    Serial.print(" (5 past) ");
   }
   else if( minutes >= 10 && minutes < 15){
     textToWords(minuteWord[2]);
-//    Serial.print("muoi");
-//    Serial.print(" (10 past) ");
   }
   else if( minutes >= 15 && minutes < 20){
     textToWords(minuteWord[3]);
-//    Serial.print("muoi ");
-//    Serial.print("lam");
-//    Serial.print(" (15 past) ");
   }
   else if( minutes >= 20 && minutes < 25){
     textToWords(minuteWord[4]);
-//    Serial.print("giờ ");
-//    Serial.print("hai ");
-//    Serial.print("muoi");
-//    Serial.print(" (20 past) ");
   }
   else if( minutes >= 25 && minutes < 30){
     textToWords(minuteWord[5]);
-//    Serial.print("giờ ");
-//    Serial.print("hai ");
-//    Serial.print("muoi ");
-//    Serial.print("lam");
-//    Serial.print(" (25 past) ");
   }
   else if( minutes >= 30 && minutes < 35){
     textToWords(minuteWord[6]);
-//    Serial.print("ruoi");
-//    Serial.print(" (half past) ");
   }
   else if( minutes >= 35 && minutes < 40){
     textToWords(minuteWord[7]);
-//    Serial.print("giờ ");
-//    Serial.print("kem ");
-//    Serial.print("hai ");
-//    Serial.print("lam ");
-//    Serial.print("phut");
-//    Serial.print(" (25 to) ");
   }
   else if( minutes >= 40 && minutes < 45){
     textToWords(minuteWord[8]);
-//    Serial.print("giờ ");
-//    Serial.print("kem ");
-//    Serial.print("hai ");
-  //  Serial.print("muoi ");
-//    Serial.print("phut");
-//    Serial.print(" (20 to) ");
   }
   else if( minutes >= 45 && minutes < 50){
     textToWords(minuteWord[9]);
-//    Serial.print("giờ ");
-//    Serial.print("kem ");
-//    Serial.print("muoi ");
-//    Serial.print("lam");
-//    Serial.print(" (15 to) ");
   }
   else if( minutes >= 50 && minutes < 55){
     textToWords(minuteWord[10]);
-//    Serial.print("giờ ");
-//    Serial.print("kem ");
-//    Serial.print("muoi ");
-//    Serial.print("phut");
-//    Serial.print(" (10 to) ");
   }
   else if( minutes >= 55){
     textToWords(minuteWord[11]);
-//    Serial.print("giờ ");
-//    Serial.print("kem ");
-//    Serial.print("nam ");
-//    Serial.print("phut");
-//    Serial.print(" (5 to) ");
-  }
-
-//Serial.println();
-}
-
-void daySuffix(int hours)
-{
-  if(hours >= 4 && hours < 10)
-  {
-    textToWords(timeOfDay[0]);
-  //  Serial.println("morning");
-  } else if(hours >= 10 && hours < 13)
-  {
-    textToWords(timeOfDay[1]);
-  //  Serial.println("midday");
-  } else if(hours >= 13 && hours < 18)
-  {
-    textToWords(timeOfDay[2]);
-  //  Serial.println("afternoon");
-  } else if(hours >= 18 && hours < 22)
-  {
-    textToWords(timeOfDay[3]);
-  //  Serial.println("evening");
-  } else if(hours >= 22 || hours < 4)
-  {
-    textToWords(timeOfDay[4]);
-  //  Serial.println("late");
   }
 }
 
@@ -245,64 +157,49 @@ void hourOffset(int hours, int minutes)
   if(hours == 0 || hours == 24 || hours == 12)
   {
     textToWords(hourWord[12]);
-  //  Serial.print("12");
   } else if(hours == 1 || hours == 13)
   {
     textToWords(hourWord[1]);
-  //  Serial.print("1");
   } else if(hours == 2 || hours == 14)
   {
     textToWords(hourWord[2]);
-  //  Serial.print("2");
   } else if(hours == 3 || hours == 15)
   {
     textToWords(hourWord[3]);
-  //  Serial.print("3");
   } else if(hours == 4 || hours == 16)
   {
     textToWords(hourWord[4]);
-  //  Serial.print("4");
   } else if(hours == 5 || hours == 17)
   {
     textToWords(hourWord[5]);
-  //  Serial.print("5");
   } else if(hours == 6 || hours == 18)
   {
     textToWords(hourWord[6]);
-  //  Serial.print("6");
   } else if(hours == 7 || hours == 19)
   {
     textToWords(hourWord[7]);
-  //  Serial.print("7");
   } else if(hours == 8 || hours == 20)
   {
     textToWords(hourWord[8]);
-  //  Serial.print("8");
   } else if(hours == 9 || hours == 21)
   {
     textToWords(hourWord[9]);
-  //  Serial.print("9");
   } else if(hours == 10 || hours == 22)
   {
     textToWords(hourWord[10]);
-  //  Serial.print("10");
   } else if(hours == 11 || hours == 23)
   {
     textToWords(hourWord[11]);
-  //  Serial.print("11");
   }
-
 }
 
 void timeToText(int hours, int minutes){
-/*
+
   Serial.print("hours:");
   Serial.print(hours);
   Serial.print(" min:");
   Serial.println(minutes);
-  */
-  textToWords(hourWord[0]);
+
   hourOffset(hours, minutes);
   minutesToWords(minutes);
-  daySuffix(hours);
 }

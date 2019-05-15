@@ -18,7 +18,6 @@ void led_setup()
   FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
   FastLED.setBrightness(  BRIGHTNESS );
   led_reset();
-
 }
 
 void led_activate(int ledID)
@@ -47,5 +46,4 @@ void led_update()
     }
   }
   FastLED.show();
-
 }

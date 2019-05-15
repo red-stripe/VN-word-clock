@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <Wire.h> // must be included here so that Arduino library object file references work
+#include <Wire.h>
 #include <RtcDS1307.h>
 
 #include "clock.h"
@@ -9,11 +9,9 @@ RtcDS1307<TwoWire> Rtc(Wire);
 
 #define countof(a) (sizeof(a) / sizeof(a[0]))
 
-
 void printDateTime(const RtcDateTime& dt)
 {
     char datestring[20];
-
     snprintf_P(datestring,
             countof(datestring),
             PSTR("%02u/%02u/%04u %02u:%02u:%02u"),
@@ -26,29 +24,19 @@ void printDateTime(const RtcDateTime& dt)
     Serial.print(datestring);
 }
 
-//int oldMinute = NULL;
-
 void updateTime(const RtcDateTime& dt){
   unsigned char hoursNow = dt.Hour();
   int hours = hoursNow;
   unsigned char minutesNow = dt.Minute();
   int minutes = minutesNow;
-  //int diff = abs(oldMinute-minutes);
-  //if(diff > 1)
-  //{
-      timeToText(hours, minutes);
-  //    minutes = oldMinute;
-  //}
+  timeToText(hours, minutes);
 }
-
-
 
 void rtc_setup()
 {
   Wire.begin();
   Rtc.Begin();
 
-  //Print time code was compiled
   Serial.print("compiled: ");
   RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
   printDateTime(compiled);
@@ -69,7 +57,6 @@ void rtc_setup()
           // Common Cuases:
           //    1) first time you ran and the device wasn't running yet
           //    2) the battery on the device is low or even missing
-
           Serial.println("RTC lost confidence in the DateTime!");
           // following line sets the RTC to the date & time this sketch was compiled
           // it will also reset the valid flag internally unless the Rtc device is
@@ -78,13 +65,11 @@ void rtc_setup()
           Rtc.SetDateTime(compiled);
       }
   }
-
   if (!Rtc.GetIsRunning())
   {
       Serial.println("RTC was not actively running, starting now");
       Rtc.SetIsRunning(true);
   }
-
   RtcDateTime now = Rtc.GetDateTime();
   if (now < compiled)
   {
@@ -94,22 +79,18 @@ void rtc_setup()
   else if (now > compiled)
   {
       Serial.println("RTC is newer than compile time. (this is expected)");
-
   }
   else if (now == compiled)
   {
       Serial.println("RTC is the same as compile time! (not expected but all is fine)");
   }
-
   // never assume the Rtc was last configured by you, so
   // just clear them to your needed state
   Rtc.SetSquareWavePin(DS1307SquareWaveOut_Low);
-
 }
 
 void rtc_task()
 {
-
   if (!Rtc.IsDateTimeValid())
   {
       if (Rtc.LastError() != 0)
@@ -127,10 +108,6 @@ void rtc_task()
           Serial.println("RTC lost confidence in the DateTime!");
       }
   }
-
   RtcDateTime now = Rtc.GetDateTime();
-
-//  printDateTime(now);
-//  Serial.println();
   updateTime(now);
 }

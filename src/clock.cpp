@@ -3,7 +3,6 @@
 #include "leds.h"
 #include "config.h"
 
-
 typedef struct ledLetters {
   int length;
   const int* values;
@@ -115,18 +114,12 @@ ledLetters timeOfDay[] = {
   {sizeof(t_late) / sizeof(t_late[0]), t_late},
 };
 
-
-
 void textToWords(ledLetters words)
 {
-//  Serial.print("\t\t\t");
   for(int x = 0; x < words.length; x++)
   {
     led_activate(words.values[x]);
-    //Serial.print(words.values[x]);
-    //Serial.print(" ");
   }
-//  Serial.println();
 }
 
 void minutesToWords(int minutes)
@@ -302,14 +295,14 @@ void hourOffset(int hours, int minutes)
 }
 
 void timeToText(int hours, int minutes){
+/*
   Serial.print("hours:");
   Serial.print(hours);
   Serial.print(" min:");
   Serial.println(minutes);
+  */
   textToWords(hourWord[0]);
   hourOffset(hours, minutes);
   minutesToWords(minutes);
   daySuffix(hours);
-
-
 }
